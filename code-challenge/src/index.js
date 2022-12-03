@@ -8,17 +8,16 @@ const characterImage = document.getElementById("image");
 const characterVoteCount = document.getElementById("vote-count");
 const characterVoteForm = document.getElementById("votes-form");
 
-//Fetch data funtion
+//Get characters
 function fetchData() {
   fetch("http://localhost:3000/characters")
-    .then((resp) => resp.json())
+    .then((response) => response.json())
     .then((data) => {
       renderCharacters(data);
-      //updateVotes(data);
     });
 }
 
-//Function to render the characters 
+//upload  the characters  to html
 function renderCharacters(data) {
   data.forEach((data) => {
     const nameSpan = document.createElement("span");
